@@ -8,7 +8,7 @@ import torch
 from matplotlib import pyplot as plt
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
-from utils import raw_spike_time, magno_spike_time, calculate_dynamic_threshold, save_image
+from utils import save_image
 from dataloader import UvaDataset
 
 # if you have a CUDA-enabled GPU the set the GPU flag as True
@@ -39,10 +39,8 @@ GrayLevels = 255  # Image GrayLevels
 loading = False  # Set it as True if you want to load a pretrained model
 LoadFrom = "weights.npy"  # The pretrained model
 saving = True # Set it as True if you want to save the trained model
-van_best = float('inf')
-train_mse_best = float('inf')
+
 train_mae_best = float('inf')
-test_mse_best = float('inf')
 test_mae_best = float('inf')
 Nnrn = [NumOfClasses]  # Number of neurons at hidden and output layers
 
@@ -203,9 +201,8 @@ for epoch in range(Nepoch):
     
     # Evaluating on train samples
     # train
-    train_Van = 0
     train_MAE = 0
-    train_MSE = 0
+    
     for i, (raw_frames, label_frame) in enumerate(traindata_loader):
         test_images = cp.asarray(raw_frames[0, :, :, :])
         labels = cp.asarray(label_frame)
