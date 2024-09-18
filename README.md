@@ -1,5 +1,5 @@
 # Motion Feature Extraction Using Magnocellular-inspired Spiking Neural Networks for Drone Detection
-Motion Feature Extraction Using Magnocellular-inspired Spiking Neural Networks for Drone Detection
+
 This repository contains the code for the paper "Motion Feature Extraction Using Magnocellular-inspired Spiking Neural Networks for Drone Detection." This project aims to use a magnocellular-inspired spiking neural network (MG-SNN) for effective motion feature extraction to enhance drone detection.
 
 ## Installation
