@@ -36,13 +36,13 @@ GrayLevels = 255  # Image GrayLevels
 
 # General settings
 loading = True  # Set it as True if you want to load a pretrained model
-LoadFrom = "/data1/Weight/weights_mae_best.npy"  # The pretrained model
+LoadFrom = "/data/Weight/weights_mae_best.npy"  # The pretrained model
 saving = False
 mae_best = 0
 Nnrn = [NumOfClasses]  # Number of neurons at hidden and output layers
 
 
-# 误差
+# MAE 
 trainMaeLoss = []
 testMaeLoss = []
 
@@ -72,12 +72,12 @@ test_label = [
 
 traindataset = UvaDataset(train_raw, train_label)
 testdataset =UvaDataset(test_raw, test_label)
+
 # Create DataLoader
 traindata_loader = DataLoader(traindataset, batch_size=1, shuffle=True)
 images, labels = next(iter(traindata_loader))  # image-->(1,2,100,120) labels-->（1，100，120）
 images = cp.asarray(images[0,:,:,:])
 labels = cp.asarray(labels)
-
 testdata_loader = DataLoader(testdataset, batch_size=1, shuffle=False)
 
 # Building the model
@@ -96,7 +96,7 @@ np.random.seed(0)
 for layer in range(Nlayers):
     W.append(cp.asarray(
         (b[layer] - a[layer]) * np.random.random_sample((Nnrn[layer], layerSize[layer][0], layerSize[layer][1])) + a[
-            layer]))  # 权重初始化
+            layer])) 
     firingTime.append(cp.asarray(np.zeros(Nnrn[layer])))
     Spikes.append(cp.asarray(np.zeros((layerSize[layer + 1][0], layerSize[layer + 1][1], tmax + 1))))  # (12000, 1, 257)
     # TargetSpikes.append(cp.asarray(np.zeros((layerSize[layer + 1][0], layerSize[layer + 1][1], tmax + 1))))  # (12000, 1, 257)
@@ -135,5 +135,5 @@ for i, (raw_frames, label_frame) in enumerate(testdata_loader):
         firingTarget = labels.flatten()
         f = firingTime[0].reshape(100, 120)
         # save_gray_image(test_images[0, :, :], filename=filename,output_dir=output_dir1, index=i)
-        save_gray_image(f,filename=filename,output_dir=output_dir, index=i)
-        print("save")
+        save_gray_image(f,filename=filename,output_dir=output_dir, index=i) # Save test set output image
+        # print("save")
