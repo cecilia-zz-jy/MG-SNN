@@ -34,10 +34,15 @@ The utils.py script contains various utility functions used throughout the proje
 ## Citation
 
   ```bash
-  @article{your_article,
-    title={Motion Feature Extraction Using Magnocellular-inspired Spiking Neural Networks for Drone Detection},
-    author={Your Name and Co-authors},
-    journal={Journal Name},
-    year={2024}
-  }
+   @article{zheng2024motion,
+     title={Motion Feature Extraction Using Magnocellular-inspired Spiking Neural Networks for Drone Detection},
+     author={Jiayi Zheng, Yaping Wan, Xin Yang, Hua Zhong, Minghua Du, and Gang Wang},
+     journal={Journal Name},
+     year={2024}
+   }
+  ```
+
+## Acknowledgments
+This project was inspired by and references code from the [S4NN repository](https://github.com/SRKH/S4NN.git). We would like to thank the authors of this repository for their valuable contributions to the field.
+
   ```
