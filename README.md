@@ -8,28 +8,29 @@ To set up the environment for this project, follow the steps below:
    ```bash
    git clone https://github.com/cecilia-zz-jy/MG-SNN.git
    cd MG-SNN
-
+    ```
 2. Install the required packages:
    ```bash
    pip install -r requirements.txt
     ```
 # Usage
 ## Data Loader
-The dataloader.py script is used for loading the dataset. Make sure to place your dataset in the appropriate directory or modify the script to point to the correct path.
+The ``dataloader.py`` script is used for loading the dataset. Make sure to place your dataset in the appropriate directory or modify the script to point to the correct path.
 
 ## Training
-To train the MG-SNN model, use the train.py script. You can modify the training parameters such as learning rate, batch size, and number of epochs directly in the script or via command-line arguments.
+To train the MG-SNN model, use the ``train.py`` script. You can modify the training parameters such as learning rate, batch size, and number of epochs directly in the script or via command-line arguments.
    ```bash
    python train.py
    ```
 # Utilities
-The utils.py script contains various utility functions used throughout the project, such as data preprocessing and evaluation metrics.
+The ``utils.py`` script contains various utility functions used throughout the project, such as data preprocessing and evaluation metrics.
+
 ## Project Structure
-* dataloader.py: Script for loading and preprocessing the dataset.
-* train.py: Script for training the MG-SNN model.
-* test.py: Script for testing and evaluating the trained model.
-* utils.py: Utility functions used across the project.
-* requirements.txt: A list of required Python packages.
+* ``dataloader.py``: Script for loading and preprocessing the dataset.
+* ``train.py``: Script for training the MG-SNN model.
+* ``test.py``: Script for testing and evaluating the trained model.
+* ``utils.py``: Utility functions used across the project.
+* ``requirements.txt``: A list of required Python packages.
 
 ## Citation
 
@@ -45,4 +46,4 @@ The utils.py script contains various utility functions used throughout the proje
 ## Acknowledgments
 This project was inspired by and references code from the [S4NN repository](https://github.com/SRKH/S4NN.git). We would like to thank the authors of this repository for their valuable contributions to the field.
 
-  ```
+
