@@ -27,6 +27,7 @@ The ``utils.py`` script contains various utility functions used throughout the p
 
 ## Project Structure
 * ``dataloader.py``: Script for loading and preprocessing the dataset.
+*  ``dataset``: The VMD dataset.
 * ``train.py``: Script for training the MG-SNN model.
 * ``test.py``: Script for testing and evaluating the trained model.
 * ``utils.py``: Utility functions used across the project.
